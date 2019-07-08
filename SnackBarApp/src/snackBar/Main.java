@@ -7,15 +7,15 @@ public class Main
         Customer c1 = new Customer(1, "Jane", 45.24);
         Customer c2 = new Customer(2, "Bob", 33.14);
 
-        VendingMachine food = new VendingMachine(1, "Food");
-        VendingMachine drink = new VendingMachine(2, "Drink");
-        VendingMachine office = new VendingMachine(3, "Office");
+        VendingMachine vm1 = new VendingMachine(1, "Food");
+        VendingMachine vm2 = new VendingMachine(2, "Drink");
+        VendingMachine vm3 = new VendingMachine(3, "Office");
 
-        Snack s1 = new Snack(1, "Chips", 36, 1.75, 1);
-        Snack s2 = new Snack(2, "Chocolate Bar", 36, 1.00, 1);
-        Snack s3 = new Snack(3, "Pretzel", 30, 2.00, 1);
-        Snack s4 = new Snack(4, "Soda", 24, 2.50, 2);
-        Snack s5 = new Snack(5, "Water", 20, 2.75, 2);
+        Snack s1 = new Snack(1, "Chips", 36, 1.75, vm1.getId());
+        Snack s2 = new Snack(2, "Chocolate Bar", 36, 1.00, vm1.getId());
+        Snack s3 = new Snack(3, "Pretzel", 30, 2.00, vm1.getId());
+        Snack s4 = new Snack(4, "Soda", 24, 2.50, vm2.getId());
+        Snack s5 = new Snack(5, "Water", 20, 2.75, vm2.getId());
 
         System.out.println("*** Processing ***");
 
@@ -56,5 +56,16 @@ public class Main
         s3.buySnack(3);
         System.out.println("c2 cash: " + c2.getCash());
         System.out.println("s3 quantity: " + s3.getQuantity());
+
+        System.out.println("Stretch");
+        System.out.println("Name: " + s1.getName() + "\n" + "Vending Machine Name: " + vm1.getName() + "\n" + "Quantity on hand: " + s1.getQuantity() + "\n" + "Total cost of all quantities of this snack on hand: " + s1.getTotalCost(s1.getQuantity()));
+
+        System.out.println("Name: " + s2.getName() + "\n" + "Vending Machine Name: " + vm1.getName() + "\n" + "Quantity on hand: " + s2.getQuantity() + "\n" + "Total cost of all quantities of this snack on hand: " + s2.getTotalCost(s2.getQuantity()));
+
+        System.out.println("Name: " + s3.getName() + "\n" + "Vending Machine Name: " + vm1.getName() + "\n" + "Quantity on hand: " + s3.getQuantity() + "\n" + "Total cost of all quantities of this snack on hand: " + s3.getTotalCost(s3.getQuantity()));
+
+        System.out.println("Name: " + s4.getName() + "\n" + "Vending Machine Name: " + vm2.getName() + "\n" + "Quantity on hand: " + s4.getQuantity() + "\n" + "Total cost of all quantities of this snack on hand: " + s4.getTotalCost(s4.getQuantity()));
+
+        System.out.println("Name: " + s5.getName() + "\n" + "Vending Machine Name: " + vm2.getName() + "\n" + "Quantity on hand: " + s5.getQuantity() + "\n" + "Total cost of all quantities of this snack on hand: " + s5.getTotalCost(s5.getQuantity()));
     }
 }
