@@ -1,4 +1,4 @@
-package snackBarApp;
+package snackBar;
 
 public class Snack
 {
